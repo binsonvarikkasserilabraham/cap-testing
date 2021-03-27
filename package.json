@@ -14,5 +14,10 @@
   },
   "scripts": {
     "start": "cds run"
-  }
+  },
+  "cds": {
+        "hana": {
+            "syntax": "hdi"
+        }
+    }
 }

@@ -1,23 +1,36 @@
 {
-  "name": "cap-testing",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^4",
-    "express": "^4"
-  },
-  "devDependencies": {
-    "sqlite3": "5.0.0"
-  },
-  "scripts": {
-    "start": "cds run"
-  },
-  "cds": {
+    "name": "cap-testing",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/audit-logging": "^5.0.0",
+        "@sap/cds": "^4",
+        "@sap/hana-client": "^2.6.61",
+        "@sap/xssec": "^3.1.2",
+        "express": "^4",
+        "passport": "^0.4.1"
+    },
+    "devDependencies": {
+        "sqlite3": "5.0.0"
+    },
+    "scripts": {
+        "start": "cds run"
+    },
+    "cds": {
         "hana": {
             "syntax": "hdi"
+        },
+        "requires": {
+            "db": {
+                "kind": "sql",
+                "model": "*"
+            },
+            "uaa": {
+                "kind": "xsuaa"
+            }
         }
     }
 }
